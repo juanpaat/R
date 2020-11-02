@@ -1,0 +1,156 @@
+---
+title: "R"
+author: "Juan Pablo"
+date: "1/11/2020"
+output: html_document
+---
+# R 
+
+Antes que nada hay que hablar del paquete {Ari}, para generar voces automatizadas bajo un scrip y así crear contenido y editarlo más facilmente. Usa R Markdown y Amazon Polly para realizar contenido.
+
+## Qué es ciencia de datos?
+Tiene varios significados pero en general dicen lo mismo: Usar datos para responder preguntas. Es un campo muy amplio que incluye estadística, matemáticas, limpieza y formato de datos y visualización de datos. 
+"Una revista de"The Economist" define un científico de datos como una persona capaz de combinar las habilidades de programa de software, estadistica, y arte para extraer los hilos de oro escondidos bajo montañas de datos.
+
+hay un estimado de 1.2 Zettabytes de información actualmente disponible y este número está constantemente creciendo de manera exponencial. Por esta razon, saber utilizar toda esta cantidad de datos se vuelve unaobligación. En ese mismo orden de ideas también se necesitarán más científicos de datos con habilidades para intermpretar, analizar y manipular toda esta gran cantidad de información.
+
+<center>
+![Cantidades de datos en la red  ](./Imagenes/Tamano.JPG){width=15%}  
+
+</center>  
+
+
+
+
+
+
+Existen unas características que describen "big data".  
+- Volumen: Grandes datasets con mucha información.  
+- Velocidad: Es generado y colectado mucho más rápido de lo que se nunca se ha hecho.  
+- Variabilidad: está en muchas formas y tipos y es variable (video, audio, video).    
+
+
+## Las habilidades que debe tener un científico de datos son
+Algunas de las características que se deben tener para ser un buen científico de datos, como se muestra la imagen son abilidades matemáticas, computacionales y en el campo donde se está trabajando, ya que ciencia de datos es una intercepción de estas.  
+La **experticia** es importante para tener una buena pregunta y saber qué tipos de datos son los indicados para responder a esa pregunta en particular.
+Para la organización de los datos, la descarga de los mismos y la manipulación de esta gran cantidad de información se necesita de habilidades computacionales, de código o **programación** , al menos en algún programa robusto como R, phytos y otros.    
+Finalmente cuando se tienen los datos hay que analizarlos y por esto es que la **estadística** juega un papel importante en la ciencia de datos y en el proceso de respuesta de preguntas con datos.
+
+<center>
+![habilidades de un cietífico de datos](./Imagenes/skills.jpg){width=30%}
+
+</center>
+
+
+
+
+Hablando de la demanda, según linkedIn ciencia de datos está entre el Top 10 de los trabajos emerjentes (en 2017). Aparte de esto parece no haber suficientes cietíficos de datos conforma avanza su demanda en el mercado. Todo esto mientras existen cada vez más y más datos y estos siguen creciendo cada segundo en todos los campos, no sólo en finanzas. 
+
+<center>
+![Trabajos emergentes según LinkedIn](./Imagenes/demanda.jpg){width=60%}
+
+</center>
+
+
+
+
+
+
+## Qué son los datos?
+Cambridge: Información, especialmente factores o numeros, colectados para ser examinados y analizados y usados para la toma de decisiones.  
+Wikipedia: Set de valores de variables cualitativas o cuantitativas.  
+
+Importante señalar que los datos son colectados, analizados y sobre todo usados para tomar decisiones. 
+
+
+set de valores: En estadistica, la población de la 1ue estamos tratando de descubrir algo
+Variables: Medidas o características de un item
+
+Variables cuantitativas: medidas o información de cantidades o items numéricos
+Variables cualitativas: medidas acerca de cualidades.
+
+<center>
+![Qué son los datos?](./Imagenes/quesondatos.jpg){width=75%}
+
+</center>  
+  
+  
+  
+  
+#### Algunos tipos de datos son
+ - Secuencias (DNA, RNA)  
+ - Datos de censos  
+ - Datos médicos electrónicos  
+ - SIG, Sistemas de información geográfica, mapas  
+ - Imágenes  
+ - palabras y traducciones  
+ - trafico web  
+ - datos personasles  
+ 
+ 
+Un buen científico de datos primero tiene una pregunta y luego colecta los datos. **Los datos son importantes pero es secundario a tu pregunta.** 
+
+## Ayuda
+Una de las cosas más comunes con las que se topan los científicos de datos es con problemas que deben solucionar sin tener conocimiento de como hacerlo, para ello existen múltiples opciones para pedir ayuda. La abilidad para solucionar problemas está en la base de la ciencia de datos. Como la ciencia de datos es relativamente nueva, es muy común que seas la primer persona en enfrentarte con un problema que nadie haya enfrentado antes, por ellos es comun quedarse estancado y allí es donde pedir ayuda puede ser muy importante.
+
+<center>
+![Foros y herramientas para ayuda](./Imagenes/ayuda.jpg){width=60%}
+
+</center>
+  
+  
+  
+  
+
+Muchas veces la solución está simplemente en tus manos y se consigue leyendo manuales o las indicaciones de los programas o los paquetes que estés utilizando. Si posteas una pregunta trivial facilmente solucionada leyendo el manual en un foro, generalmente recibirás una respuesta como "lee el manual" o algo similar.
+Un segundo paso es revisar en internet, pero antes debes estar seguro de que alguien no haya preguntado sobre lo mismo antes, para eso puedes hacer uso de los buscadosres en los foros. Una buena búsqueda en google o en internet siempre te dará un buen inicio y guía para solucionar tus preguntas.
+Preguntarle a un par es siempre una estrategia que puede ser muy útil para solucionar tus preguntas y seguir adelante con tus análisis. Algún profesor o alguien con más experiencia que tu cabe en esta casilla.
+Si ya haz intentado todo lo anterior y aún no haz conseguido solucionar tu problema, es hora de postear tu pregunta en un foro.
+La imagen muestra qué se debe poner para hacer una pregunta adecuada en un foro. 
+
+<center>
+![Algunos tips para realizar preguntas en los foros ](./Imagenes/foros.jpg){width=75%} 
+
+</center>
+  
+  
+    
+  
+Algunos ejemplos de mensajes a la hora de escribir en foros para solucionar nuestros problemas se muestran a continuación, Nota que debes ser específico y mostrar la información completa, sin embargo no se debe poner información de más ni información que no sea importante en el proceso, al igual que se debe ser claro y revisar tu escritura. Finalmene debes estar seguro de que tu error **es replicable** de lo contrario, nadie podrá reproducirlo y por tanto no podrán ayudarte.
+
+
+#### Malos:  
+- HELP! Can't fit linear model!  
+- HELP" Don't undestand PCA!  
+
+#### Buenos:  
+- R 3.4.3 lm() function produces seg fault with large data frame (windows 10)  
+- Applied PCA to a matrix - what are U,D,and Vt?  
+
+#### Excelentes:  
+- R 3.4.3 lm() function on windows 10 - seg fault on large dataframe   
+- Using principal components to discover common variation in rows of a matrix, should I use, U, D or Vt  
+
+##  El proceso de ciencia de datos
+
+El proceso para realizar un trabajo en ciencia de datos es complejo. Todos los proyectos comienzan con una pregunta que pueda ser respondida con datos. Es por esto que todo proceso comienza con una pregunta. El segundo paso es encontrar o generar los datos que vasa usar para responder a esa pregunta. Con la pregunta clara y los datos en las manos, se debe entonces proceder a analizar los datos explorando los datos y sacando conclusiones a travez de la matemática y la estadística. Finalmente queremos comunicar nuestros resultados con los demás, generalmente es un reporte que entregamos a los interesados, una presentación a un grpo de personas, un post en un blog o una publicación. 
+Este último paso (comunicación) casi siempre está presente en la ciencia de datos y es un paso fundamental y debe ser formal.
+
+
+<center>
+![Ejemplo de un reporte en un blog luego de realizar un análisis de ciencia de datos](./Imagenes/post.jpg){width=100%} 
+
+</center>
+
+Siempre es bueno y es parte importante del proceso presentar el código (code book) o los pasos que realizaste para obtener tus resultados, de esta forma todo puede ser replicado y verificado de forma científica. Además es importante para detectar posibles errores que puedas haber cometido en tu trabajo.
+
+Algunos ejemplos de trabajos son:  
+
+- https://sharlagelfand.netlify.app/posts/tidying-toronto-open-data/
+- https://pennmusa.github.io/MUSA_801.io/project_5/index.html#5_feature_appendix
+- http://varianceexplained.org/r/trump-tweets/
+- https://masalmon.eu/2017/11/16/wheretoliveus/
+
+
+
+
