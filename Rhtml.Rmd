@@ -152,5 +152,202 @@ Algunos ejemplos de trabajos son:
 - https://masalmon.eu/2017/11/16/wheretoliveus/
 
 
+##I Intalar R
+R es un programa de lenguaje de programación que se centra esppecialmente en estadística y gráficos. Pero por qué usar R. Como se puede ver en la imagen es una de los lenguajes top 5 en popularidad para científicos de datos. R es muy flexible y puede extenderse no sólo a estadística o gráficos sino también a creación de pag web, realización de diapositivas, arte, creación de mapas, creación de aplicaciones y muchoas funcionalidades más. 
+
+
+<center>
+![Popularidad de los programas](./Imagenes/programas.jpg){width=70%} 
+
+</center>
+
+
+La razón por la cual R es tan popular es por la comunidad que crea cadad ia nuevos paquetes y mantienen pag y pag de foros y blog dedicados a solucionar problemas y a dibulgar soluciones referentes a el día a día del lenguaje.
+
+
+
+para descargar r 
+https://www.r-project.org/
+
+
+para descargar RStudio
+Integrated or interactive Development Environment (IDE)- entorno de desarrollo integrado
+https://rstudio.com/products/rstudio/download/
+
+
+para observar que versión de R estás corriendo usa
+```{r}
+version    #mira la versión
+```
+
+```{r}
+sessionInfo()   # muestra la versión con la listas y paquetes que haz cargado
+```
+
+
+
+
+
+### Los paquetes de R 
+Los paquetes en R son los que lo hacen tan especial, todos ellos se guardan en un lugar llamado 'library'. Un paquete es una colección de funciones, datos y código combinado de cierta manera para realizar algunas tareas. 14300 proxmadamente en 2015. Library es la librería y los paquetes son los libros.
+Los paquetes se encuentran disponibles en los repositorios (web) donde allí están disponibles para su descarga.
+Hay 3 repositorios principales
+- CRAN (The Comprehensive R Archive Network). Principal
+- GitHub (no es específico pero es muy popular)
+- Bioconductor (Principalmente para bioinformatica y medicina)
+
+
+
+#### Cómo puedo encontrar paquetes en R y cómo explorar su funcionalidad
+1. CRAN por ejemplo agrupa los paquetes por algunas funcionalidades preestablecidas.
+
+<center>
+![Agrupación de CRAN - 'Task view'](./Imagenes/CRAN.jpg){width=70%} 
+
+</center>
+
+2. RDocumentation es una pag web para los paquetes de CRAN, BioConductor y GitGub donde puedes buscar información y explicación de los paquetes.
+
+
+3. Google it
+
+
+
+
+### Cómo puedo instalar un paquete
+**Desde CRAN**
+```
+install.packages("nombre del paquete")
+intal.packages(c("paquete1","paquete2","paquete3"))
+
+```
+**Desde Bioconductor**  
+El repositorio 'Bioconductor' usa su propio método para instalar paquetes de allí.
+```
+source("https://bioconductor.org/biocLite.R") #Esto hace que la siguiente función que es la función principal de este repositorio quede disponible.
+```
+La función biocLite se usa para descargar el paquete 
+
+```
+biocLite()
+biocLite("GenomicFeatures")   #para descargar 
+
+```
+**Desde GitHub**  
+En GitHUb es un poco más específico. Debes tomar nota del autor y luego del nombre del paquete. Luego si no tienes intalado el paquete 'devtools' y luego usar la función 'install_github("autor/paquete') así:
+```
+install.packages("devtools")
+library(devtools)
+install_github("autor/paquete")
+
+```
+
+Instalar un paquete no hace inmediatamente disponible tener el paquete para usar, debes llamarlo. Siguiendo la analogía de que la library es la biblioteca y los paquetes son el libro, debes llamarlo o tomar el libro, esto se hace con la función 'library'
+
+```
+library(nombredelpaquete) #sin comillas
+```
+
+
+Algunos paquetes requieren de otros paquetes para ser cargados anteriormente. También algunos paquetes requieren unas versiones específicas de R, y debes verificarlo antes de instalarlo para que te funcione correctamente. Otras veces usas un paquete correctamente y cuando lo actualizas puede que tu scrip no corra correctamente de nuevo, por ello debes tener en cuenta la versión que estás usando y las actualizaciones de los paquetes.
+
+ ```
+installed.packages()  mostrará los paquetes que tienes instalados
+library()   también hará lo mismo que intalled.packages()
+old.packages()    mira cuales paquetes necesitan actualización
+update.packages()    actualiza todos los paquetes que lo requieran
+install. packages("nombredelpaquete")    para actualizar sólo un paquete
+remove.packages("nombredelpaquete")   elimina un paquete
+```
+
+
+
+para ver que funciones tiene disponible un paquete utiliza la siguiente función
+
+```{r}
+help(package="ggplot2")
+```
+
+Muchos paquetes incluyen viñetas, que son documentos utiles que incluyen información y ejemplos de los paquetes y sus funciones.
+
+```
+browseVignettes("ggplot2")
+```
+_________________________________________________________________________________________
+
+
+# Análisis de datos exploratorios
+Exploratory Data Analysus (EDA)  
+
+dir() #muestra los archivos que hay en tu directorio de trabajo o "working directory"
+getwd()   
+setwd()  
+  
+  
+## Principios de gráficos analíticos
+Cuando realizamos gráficos analíticos queremos contar unahistoria de lo que está pasando con nuestros datos. Algunas reglas pueden ser las siguieintes:
+Principios.  
+
+**1. Mostrar comparaciones:**  Esta es una idea básica en la ciencia en general ya que cada evidencia para una hipótesis o una idea del mundo siempre va a ser relativa a otra hipótesis. Entonces siempre debe haber una "comparado con qué". Un contexto. Generalmente puede ser un control. 
+
+
+<center>
+![contexto, un grupo control de referencia y otro grupo para comparar. Vemos que los días sin  síntomas de asma en promedio son mayores a 0 (>0) en el grupo que puso un limpiador de aire en su casa, pero comparado con qué? ](./Imagenes/sincomparacion.jpg){width=50%} 
+
+</center>
+
+<center>
+![contexto, un grupo control de referencia para comparar y otro grupo el cual es el grupo de interés. El control en este caso son casas sin limpiador de aire](./Imagenes/contexto.jpg){width=50%} 
+
+</center>
+
+
+**2. Mostrar causalidad:**  Mecanismos, posibles explicaciones o estructuras sistemáticas, de cómo crees que el mundo funciona. Cuál es la cáusa para pensar en tu hipótesis.
+
+
+<center>
+![Una imagen que apoye nuestra explicación. En el ejmplo anterior vemos  que si instalas un limpiador de aire en un hogar los dpias sin síntomas de asma aumentan, pero por qué? Podemos decir que el limpiador de aire está limpiando el aire y removiendo material particulado del ambiente y así al ser removido no va a ir al pulmón de los niños y por tanto mostrará menos síntomas de asmas. Así mostramos un  gráfico que muestra la cantidad de material particulado y que puede ser una posible explicación de como funcionan los datos o por qué los datos muestran dicha tendencia](./Imagenes/causalidad.jpg){width=70%} 
+
+</center>
+Así podemos mostrar una pequeña explicación, pero para realmente confirmar la hipótesis de que el limpiador de aire funciona atravez de la limpieza del material particulado hay que realizar mucha más investigación y quizá experimentación, pero este es un gráfico que puede sugerir una posible explicación.
+
+**3. Mostrar datos multivariados:** mostrar la mayor cantidad de datos que puedas en un solo plot. Y la razón es porque el mundo es indiscutiblemente multivariado, hay miles de cosas que suceden en un sólo sitio o lugar y 1, 2 ó pocas variables realmente nunca mostrarán lo que pasa en el mundo real. Si pones muchos más datos en un plot entonces vas a dar una historia mucho más creible.
+
+<center>
+![En este ejemplo tenemos la concentración de materia particulada en el eje x, y en el eje y tenemos la mortalidad diaria de NY (por cualquier cáusa). Aquí parece haber una pequeña asociación negativa que sugiere que a mayores concentraciones hay menor mortalidad](./Imagenes/Multivariado.jpg){width=60%} 
+
+</center>
+
+
+Pero  en realidad puedes mirar otros escenarios ya que no sólo la calidad de el aire (materia particulada en este caso ) están asociados con la mosrtalidad. por ejemplo una de las cosas que podemos mirar cómo vambia la materia particulada en las diferentes estaciones en referencia a las muertes diaras en NY city.
+
+<center>
+![mortalidad en diferentes estaciones](./Imagenes/seasons.jpg){width=90%} 
+
+</center>
+
+Como vemos en el fráfico anterior, es el mismo gráfico que el gráfico sin separaciones de estaciones pero vemos que de manera muy interesante ahora parece que la relación es positiva cuando se separa por otra variable, esta vez estaciones del año.
+
+Entonces parece ser paradógico, pero lo que sucede simplemente es que una vriable está enmascarando la relación entre otras dos. Así, dentro de cada estación del año la relación es ligeramente positiva **y cambia entre estaciones**.
+
+**4. Integrar las evidencias que tenemos:** Siempre queres mostrar la mayor cantidad de evidencia que tengas, para que tu trabajo sea creible y convencer a todos de que lo que hiciste está bien hecho. Entonces no hay razón por la cual sólo tengas una presentación para tus resultados, como por ejemplo un plot o una tabla sólo tengas esa tabla o ese plot como resultado, puedes agregar palabras, números, imágenes, diagrámas, entre otros, no necesariamente. 
+Una de las ventajas 
+
+<center>
+![muestras no sólo de datos sino de palabras ](./Imagenes/evidencia.jpg){width=70%} 
+
+</center>
+
+en la imagagen anterior vemos la relación entre la materia particulada y la admisión a las emergencias hospitalarias. Lo importante es ver la información extra por ejemplo la columna que dice probabilidad posterior al lado derecho  como dedida de la veracidad de la evidencia. Además hay un pedazo de texto (pie de imagen o leyenda) que muestra información importante acerca de los resultados y pone información importante que es dificil poner en un plot.
+
+
+**5. Describir y documentar la evidencia:** Para esto puedes usar etiquetas apropiadas, o escalas o fuentes, entre otras, para dar credibilidad. Mostrar la fuente donde sacaste la información también es muy importante. y cómo sacaste la información o los datos es también muy importante.
+
+**6. EL contenido es lo más importante:** Siempre tienes que neter en cuenta que historia quieres contar y que contenido tienes, que datos tienes, y luego que hayas pensado en esto, debes ver cual es la mejor forma de presetarlo y como se va a ver lo que uqieres presentar, porque si no tienes buen contenido entonces no hay mucho que puedas hacer.
+
+
+
+
+
 
 
